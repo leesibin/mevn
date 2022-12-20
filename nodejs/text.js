@@ -3,15 +3,11 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('김수환 멍청이다')
+  res.send('김수환 : 사실 민초 좋아해->/main해보세요')
 })
 
 app.get('/main', (req, res) => {
-    res.send('main경로로 오신 것을 환영합니다.')
-  })
-
-  app.get('/img', (req, res) => {
-    res.send('main경로로 오신 것을 환영합니다.')
+    res.send('민초 사탕먹고싶다.')
   })
 
 app.listen(port, () => {

@@ -9,4 +9,4 @@ console.log(b,c) //1 2
 
 const a3 ={'Name' : '큰돌', '노래':'자취방좋아'}
 const {Name,노래} = a3
-console.log(Name,노래) //큰돌 자취방좋아q
+console.log(Name,노래) //큰돌 자취방좋아

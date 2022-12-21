@@ -16,7 +16,7 @@
    <script>
     document.addEventListener("DOMContentLoaded",()=>{
         const type = document.querySelector('h1')
-            new TypeIt(type, {speed: 50}).pause(500).move(-6).type("나의 ").go();
+            new TypeIt(type, {speed: 100}).pause(1000).move(-4).type("나의 할일목록").go();
 
         })
    </script>
@@ -157,12 +157,19 @@
         .no-showB{
             display: none;
         }
+        #catBG{
+            width: 200px;
+        }
+        #moster{
+            position: absolute;
+            left: 10px;
+            width: auto;
+            height: 300px;
+        }
     </style>  
       <script>
         document.addEventListener("DOMContentLoaded",()=>{
             const type = document.querySelector('h1')
-                new TypeIt(type, {speed: 50}).pause(500).move(-6).type("나의 ").go();
-                
                 const newInput = document.getElementById('new-input')
                 const newadd = document.getElementById('new-add')
                 const selDel = document.getElementById('sel-del')
@@ -203,7 +210,7 @@
                         newInput.value = null //null,undefined : null은 null아무것도없음/undefined 초기화는됨
                         id++ 
                         localStorage.setItem('id',id)
-                        h1.textContent = '나의할일목록'
+                        h1.textContent = ''
                     }else{
                         h1.textContent = '내용을 작성해 주세요!!'
                     }
@@ -281,7 +288,7 @@
 <body>
     <div class="container">
         <div class="main">
-            <h1>할일 목록</h1>
+            <h1></h1>
             <div class="input-set"><input type="text" id="new-input">
                 <input type="button" id="new-add" value="할일추가"></div>
                 <button id="sel-del">완료제거</button>
@@ -289,7 +296,11 @@
             </div>
             <hr>
             <div id="list">
+                
         </div>
+    </div>
+    <div id="catBG">
+        
     </div>   
 </body>
 </html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="format-detaction" content="telephone=no">       <!-- 숫자와 핸드폰번호로 인식 안되게 설정 -->
+    <meta name="description" content="뮤직 모바일 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요">
+    <meta name="keywords" content="뮤직, music, 듣기, 애플뮤직, Apple Music">
+   
+    <!-- Open Graph -->
+
+    <meta name="og:site_name" content="Apple Music App" />
+    <meta name="og:title" content="Apple Music App" />
+    <meta name="og:description" content="뮤직 모바일 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요" />
+    <meta name="og:img" content="http://seongh.github.io/Apple1/assets/imges/이미지이름" />
+    <title>Apple Music</title>
+    
+    <!-- style -->
+    <link rel="stylesheet" href="css/reset.css"> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    
+    <script type="text/javascript" src="js/slick.min.js"></script>
+</head>
+<body>
+     <!-- header -->
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <time class="data">2022년 10월 1일</time>
+                <h1 class="title">음악듣기</h1>
+                <div class="ic">W</div>
+            </div>
+        </div>
+    </header>
+        
+        <!-- best music -->
+        <main>
+            <section class="music">
+                <article class="bestM">
+                    <div class="container">
+                        <div class="row">
+                            <div class="best-title">
+                                <span class="be-stit">BEAT1 ON AIR</span>
+                                <h1 class="be-tit">Travis Mills</h1>
+                                <p class="be-desc">L.A’s pop culture authority</p>
+                            </div>
+                            <picture>
+                                <img src="imges/bestM@1.png" alt="방탄소년단">
+                                <!-- 예전방법으로 화면에 따른 이미지 넣기 -->
+                                <!-- <img src="그림위치" alt="그림설명" srcset="화면사이즈에 맞춰">
+                                <source srcset="imges/bestM@3.png" media="(min-width:800px)">
+                                <source srcset="imges/bestM@2.png" media="(min-width:600px)">
+                                <img src="imges/bestM@1.png" alt="방탄소년단" 
+                                srcset="imges/bestM@1.png 1x, imges/bestM@2.png 2x, imges/bestM@3.png 3x"> -->
+                            </picture>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        <!-- recent music -->
+    <article class="recentM">
+        <div class="container">
+            <div class="row">
+                <h2>최근 재생한 음악</h2>
+                <div class="banna">
+                                    <!-- 첫번째 이미지 -->
+                    <div class="recent">
+                        <picture>
+                            <img src="imges/recent(1).png" alt="최근 재생음악1">
+                        </picture>
+                        <div class="recent-title">
+                            <span class="ret-stit">퓨어팝</span>
+                            <P class="ret-desc">오늘의 팝사운드</P>
+                        </div>
+                    </div>
+                                    <!-- 두번째 이미지 -->
+                    <div class="recent">
+                        <picture>
+                            <img src="imges/recent(2).png" alt="최근 재생음악1">
+                        </picture>
+                        <div class="recent-title">
+                            <span class="ret-stit">퓨어팝</span>
+                            <P class="ret-desc">오늘의 팝사운드</P>
+                        </div>
+                    </div>
+                     <!--세번째 이미지  -->
+                    <div class="recent">
+                        <picture>
+                            <img src="imges/recent(2).png" alt="최근 재생음악1">
+                        </picture>
+                        <div class="recent-title">
+                            <span class="ret-stit">퓨어팝</span>
+                            <P class="ret-desc">오늘의 팝사운드</P>
+                        </div>
+                    </div>
+                </div>
+                                       <!--//bann  -->
+                </div>
+            </div>
+        </article>
+            <article class="nextM">
+                <div class="container">
+                    <div class="row">
+                        <h3>다음프로그램</h3>
+                        <div class="next-wrap">
+                            <!-- 첫번째 -->
+                            <div class="next">
+                                <div class="next-img">
+                                    <Picture>
+                                    <img src="imges/next(1).png" alt="다음음악">
+                                    </Picture>
+                                </div>
+                                <div class="next-tit">
+                                    <span class="nt-stit">BEAT1 ON AIR</span>
+                                    <h2 class="nt-tit">BEAT1 ON AIR</h2>
+                                    <P class="nt-desc">Paloma Mami talks female empowerment and her sodfdfdfng Mami</P>
+                                </div> 
+                            </div> 
+                                   <!--두번째  -->
+                                   <div class="next">
+                                    <div class="next-img">
+                                        <Picture>
+                                        <img src="imges/next(2).png" alt="다음음악">
+                                        </Picture>
+                                    </div>
+                                    <div class="next-tit">
+                                        <span class="nt-stit">BEAT1 ON AIR</span>
+                                        <h2 class="nt-tit">BEAT1 ON AIR</h2>
+                                        <P class="nt-desc">Paloma Mami talks female empowerment and her sodfdfdfng Mami</P>
+                                    </div> 
+                                </div>
+                                <!--세번째  -->
+                                <div class="next">
+                                    <div class="next-img">
+                                        <Picture>
+                                        <img src="imges/next(3).png" alt="다음음악">
+                                        </Picture>
+                                    </div>
+                                    <div class="next-tit">
+                                        <span class="nt-stit">BEAT1 ON AIR</span>
+                                        <h2 class="nt-tit">BEAT1 ON AIR</h2>
+                                        <P class="nt-desc">Paloma Mami talks female empowerment and her sodfdfdfng Mami</P>
+                                    </div> 
+                                </div>
+                                <!-- 네번째 -->
+                                <div class="next">
+                                    <div class="next-img">
+                                        <Picture>
+                                        <img src="imges/next(4).png" alt="다음음악">
+                                        </Picture>
+                                    </div>
+                                    <div class="next-tit">
+                                        <span class="nt-stit">BEAT1 ON AIR</span>
+                                        <h2 class="nt-tit">BEAT1 ON AIR</h2>
+                                        <P class="nt-desc">Paloma Mami talks female empowerment and her sodfdfdfng Mami</P>
+                                    </div> 
+                                </div>
+                                <!-- 다섯번째 -->
+                                <div class="next">
+                                    <div class="next-img">
+                                        <Picture>
+                                        <img src="imges/next(5).png" alt="다음음악">
+                                        </Picture>
+                                    </div>
+                                    <div class="next-tit">
+                                        <span class="nt-stit">BEAT1 ON AIR</span>
+                                        <h2 class="nt-tit">BEAT1 ON AIR</h2>
+                                        <P class="nt-desc">Paloma Mami talks female empowerment and her sodfdfdfng Mami</P>
+                                    </div> 
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </article>  
+           
+    </main>
+<!-- play -->
+<section class="play">
+    <div class="playmusic">
+        <img src="imges/play.png" alt="플레이 앨범 자켓">
+    </div>
+    <div class="play-tit">스폰지밥 사운드</div>
+    <div class="play-btn">
+        <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 7.76795C17.3333 8.53775 17.3333 10.4623 16 11.2321L3.25 18.5933C1.91667 19.3631 0.249999 18.4008 0.249999 16.8612L0.25 2.13878C0.25 0.599183 1.91667 -0.363068 3.25 0.406733L16 7.76795Z" fill="black"/>
+            </svg>      
+    </div>
+    <div class="next-btn">
+        <svg width="30" height="19" viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.25 12.8195L3.25 18.5932C1.91667 19.363 0.250002 18.4008 0.250002 16.8613V2.13861C0.250002 0.599058 1.91667 -0.3631 3.25 0.406675L13.25 6.18036V2.13861C13.25 0.599058 14.9167 -0.3631 16.25 0.406675L29 7.768C30.3333 8.53778 30.3333 10.4621 29 11.2319L16.25 18.5932C14.9167 19.363 13.25 18.4008 13.25 16.8613V12.8195Z" fill="black"/>
+            </svg>   
+    </div>
+    <!-- nav -->
+
+</section>
+
+<nav class="nav">
+    <ul>
+        <li>
+            <a href="#">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.12501 10.1285C-1.69998 16.9559 -1.69998 28.0098 5.07501 34.8371C8.75001 26.3342 15.3 19.2317 23.475 15.0052C16.55 20.8573 11.7 29.0351 10 38.3134C16.5 41.3894 24.5 40.264 29.875 34.8872C38.575 26.1841 40 0 40 0C40 0 13.825 1.4255 5.12501 10.1285Z" fill="black"/>
+                    </svg>
+                    <span>menu</span>
+                   </a>
+                  
+        </li>
+        <li>
+            <a href="#">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M39.4762 32.6941L22.9554 16.0732C24.5893 11.8723 23.6816 6.94088 20.2322 3.47058C16.6013 -0.182358 11.1549 -0.912946 6.79778 1.09617L14.6043 8.95L9.15788 14.4294L1.16984 6.57558C-1.00872 10.9591 -0.100989 16.4385 3.52994 20.0915C6.97933 23.5618 11.8811 24.475 16.0567 22.8312L32.5774 39.4521C33.3036 40.1826 34.3929 40.1826 35.119 39.4521L39.2946 35.2512C40.2023 34.5206 40.2023 33.2421 39.4762 32.6941Z" fill="black"/>
+                    </svg>
+                    <span>setting</span>
+                </li>
+            </a>
+           
+        <li>
+            <a href="#">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 7.66634L30.8 0L28.22 3.03873L37.42 10.7051L40 7.66634ZM11.76 3.03873L9.2 0L0 7.64647L2.58 10.6852L11.76 3.03873ZM21 12.1946H18V24.1112L27.5 29.7716L29 27.3287L21 22.6216V12.1946ZM20 4.25025C10.06 4.25025 2 12.2542 2 22.1251C2 31.996 10.04 40 20 40C29.94 40 38 31.996 38 22.1251C38 12.2542 29.94 4.25025 20 4.25025ZM20 36.0278C12.26 36.0278 6 29.8113 6 22.1251C6 14.4389 12.26 8.22244 20 8.22244C27.74 8.22244 34 14.4389 34 22.1251C34 29.8113 27.74 36.0278 20 36.0278Z" fill="black"/>
+                    </svg>
+                    <span>watch</span>
+            </a>
+           
+        </li>
+        <li>
+            <a href="#">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M35 13.3333H32.5V9.52381C32.5 4.26667 26.9 0 20 0C13.1 0 7.5 4.26667 7.5 9.52381V13.3333H5C2.25 13.3333 0 15.0476 0 17.1429V36.1905C0 38.2857 2.25 40 5 40H35C37.75 40 40 38.2857 40 36.1905V17.1429C40 15.0476 37.75 13.3333 35 13.3333ZM20 30.4762C17.25 30.4762 15 28.7619 15 26.6667C15 24.5714 17.25 22.8571 20 22.8571C22.75 22.8571 25 24.5714 25 26.6667C25 28.7619 22.75 30.4762 20 30.4762ZM27.75 13.3333H12.25V9.52381C12.25 6.26667 15.725 3.61905 20 3.61905C24.275 3.61905 27.75 6.26667 27.75 9.52381V13.3333Z" fill="black"/>
+                    </svg>
+                    <span>lock</span>
+            </a>
+           
+        </li>
+        <li class="layer">
+            <a href="#">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.4286 38C11.4286 39 12.5714 40 14.2857 40H25.7143C27.4286 40 28.5714 39 28.5714 38V36H11.4286V38ZM20 0C8.85714 0 0 6.2 0 14C0 18.8 3.42857 23 8.57143 25.4V30C8.57143 31 9.71429 32 11.4286 32H28.5714C30.2857 32 31.4286 31 31.4286 30V25.4C36.5714 22.8 40 18.6 40 14C40 6.2 31.1429 0 20 0Z" fill="black"/>
+                    </svg>
+                    <span>light</span>
+            </a>
+            
+        </li>
+    </ul>
+
+</nav>
+<!-- 레이어 팝업 -->
+<div id="layer">
+    <img src="imges/bestM@3.png" alt="레이어팝업">
+    <a href="#" class="close">close</a>
+</div>
+<script>
+        
+    // popup
+    $(".layer").click(function(e){
+        e.preventDefault();
+        $("#layer").slideDown();
+    });
+    
+    $("#layer .close").click(function(e){
+        e.preventDefault();
+        $("#layer").slideUp();
+    });
+
+    // slick
+    $('.banna').slick({
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false
+
+     });
+
+    
+</script>
+  
+
+    
+</body>
+</html> 

@@ -1,0 +1,181 @@
+/* conatiner */
+.container{width: 1000px; margin: 0 auto;}
+
+/* row */
+.row{
+    margin: 0 20px;
+    position: relative;
+    
+    padding-bottom: 20px;
+}
+
+/* header */
+#header .data{
+font-weight: 400;
+font-size: 12px;
+line-height: 20px;
+color: #B5B5B5;
+}
+#header .title{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #D9D9D9;
+    padding-bottom: 20px;
+}
+
+#header .ic{
+    position: absolute; /*오른쪽 끝으로*/
+    width: 40px;
+    height: 40px;
+    right: 0px;
+    bottom: 35px;
+    background: linear-gradient(142.43deg, #ACACAC 4.35%, #E4E4E4 82.32%);
+
+    color: #fff;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+/* bestM */
+.best-title{
+    padding-top: 20px;
+}
+.bestM .best-title .be-stit{
+    font-size: 10px;
+    line-height: 20px;
+    color: #C92B2B;
+}
+.bestM .best-title .be-tit{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+ 
+}
+.bestM .best-title .be-desc{
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #ACACAC;
+    margin-bottom: 20px;
+}
+
+/* recentM */
+.recentM{
+    margin-top: 20px;
+    padding: 20px 0;
+    overflow: hidden;
+    
+}
+.recentM h2{
+    font-weight: 600;
+    font-size: 28px;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.recentM .recent{
+    float: left; /*왼쪽 정렬*/
+    width: 49%;
+    margin-right: 2%;
+}
+.recentM .recent:last-child{
+margin-right: 0;
+}
+.recentM .recent-title .restit{
+    font-size:  20px;
+    line-height: 30px;
+}
+.recentM .ret-desc{
+    font-size:  20px;
+    line-height: 30px;
+    color: #B5B5B5;
+}
+
+/* nextM */
+.nextM h3{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 24px;
+    border-top: 1px solid #B5B5B5;
+    padding-top: 30px;
+}
+
+.nextM .next{display: flex;}
+.nextM .next::after{
+    content: '';
+    position: absolute; 
+    right: 0;
+    bottom: -10px;
+    width: calc(100% - 110px);
+    height: 1px;
+    background: #B5B5B5;
+}
+.nextM .next-img{
+    width: 100px;
+    margin-right: 12px;
+}
+.nextM .next .next-tit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.nextM .next .nt-stit{
+    color: #C92B2B; font-size: 12px;
+}
+.nextM .next .nt-tit{font-size: 28px; line-height: 40px;}
+.nextM .next .nt-desc{
+     font-size: 10px;
+    line-height: 20px;
+    color:#B5B5B5;
+  
+}
+/* play */
+.play{
+    width: 100%; height: 60px;
+    background: rgb(170, 170, 170, 0.5);
+    position: fixed; z-index: 9999; /*z-index 겹치지 않기*/
+    display: flex; bottom: 80px; align-items: center;
+    backdrop-filter: saturate(180%) blur(10px);
+}
+.play .playmusic{width: 48px; padding: 5px 20px;}
+
+.play .playmusic img{
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #888;
+}
+
+.play .play-tit{font-size: 16px;}
+.play .play-btn{margin-left: auto; padding: 0 20px;}
+.play .next-btn{margin-right: 20px; cursor: pointer;}
+
+/* nav */
+.nav {position:fixed; z-index: 9999; width: 100%; background: #fff; bottom: 0;}
+.nav ul{display: flex; text-align: center;}
+.nav ul li{flex-basis: 20%; padding: 10px 0;}
+.nav ul li a{display: block;}
+.nav ul li a span{display: block; font-size: 12px; line-height: 12px; color: #aaa;}
+
+
+
+/* 레이어 팝업 */
+#layer {display: none; position: fixed; width: 500px; left: 0; top: 50%; background: #C92B2B; border: 10px solid #f00; 
+       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);}
+#layer img{width:100%; display: block;}
+#layer .close{position: absolute; right: 20px; top: 20px; padding: 10px; background:#000; color :#fff;}
+#layer .close:hover{text-decoration: underline;}
+
+
+
+/* 맨마지막에 고정 */
+/*mediaquery*/
+@media(max-width:1000px){ /*화면 넓이에*/
+    .container{width:100%}
+    }
+    

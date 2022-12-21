@@ -11,5 +11,5 @@ app.get('/main', (req, res) => {
   })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`coming soon 이시빈 world ${port}`)
 })

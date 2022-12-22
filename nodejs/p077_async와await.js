@@ -36,6 +36,14 @@ const  job3 = ()=>{
         },random)
     })
 }
-// job1().then(ret=job2).then(ret=job3)
-job1().then(job2).then(job3).then(job4)
+const main = async()=>{
+    await job1()
+    await job2()
+    await job3()
+    await job4()
+    await job5()
+    await job6()
+
+}
+main()
 

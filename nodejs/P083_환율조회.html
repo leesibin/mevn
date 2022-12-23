@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DprmiseAll예제1</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const einput =document.createElement('input')
+            const espan =document.createElement('span')
+            const ebutton =document.createElement('button')
+            const ep =document.createElement('p')
+            document.body.append(einput,espan,ebutton,ep)
+            ebutton.textContent = '계산'
+            espan.textContent = '달러'
+            const dollar = +einput.value
+            const url = 'https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD'
+
+            ebutton.addEventListener('click',()=>{
+                const dollar = +einput.value
+                if(isNaN(dollar)){
+                    ep.textContent = ''
+                    return //조기리턴 
+                }else{
+                fetch(url)
+                .then((response)=>response.json())
+                .then(data=>{
+                
+                    let won = (dollar*data[0].basePrice).toLocaleString('ko-kr') //tolocalestring 각나라의 돈에대한 소수점 변환
+                    ep.textContent = won
+                    console.log(won)
+                    })
+                }
+                })
+                   
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

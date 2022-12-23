@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DprmiseAll예제2Error</title>
+    <script>
+        function test(text, time){
+            return new Promise((resoleved,rejected)=>{
+                setTimeout(()=>{
+                    typeof(text)==='string'
+                    ? resoleved('스트림입니다')
+                    : rejected('파악이 안됩니다.')
+                },time)
+                console.log(text)
+            })
+        }
+
+        /* PromiseAll */
+       const textAll = async()=>{  //배열로들어감
+        console.time('PromiseAll시간측정')  //에러 띄운부분 시간부터종료
+        try{
+            await Promise.all([  
+            test('코딩',3000),
+            test('222',2000),
+            test(10,1000)
+        ])
+        }
+        catch(e){
+            console.log(e)
+        }
+       console.timeEnd('PromiseAll시간측정')
+       }
+       textAll()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

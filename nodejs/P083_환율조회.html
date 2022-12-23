@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DprmiseAll예제1</title>
+    <script src=""></script>
     <script>
         document.addEventListener("DOMContentLoaded",()=>{
             const einput =document.createElement('input')
@@ -15,6 +16,7 @@
             ebutton.textContent = '계산'
             espan.textContent = '달러'
             const dollar = +einput.value
+            value().then(mydata)
             const url = 'https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD'
 
             ebutton.addEventListener('click',()=>{

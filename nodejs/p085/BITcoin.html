@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비트코인환율조회</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            
+            const div1 = document.createElement('div')
+            const div2 = document.createElement('div')
+            const div3 = document.createElement('div')
+            const div4 = document.createElement('div')
+            const div5 = document.createElement('div')
+            const div6 = document.createElement('div')
+            const button1 = document.createElement('button')
+            const button2 = document.createElement('button')
+            document.body.append(div1,div2,div3,div4,div5,button1,div6,button2)
+            button1.textContent = '옵션'
+            button2.textContent = '비교'
+
+            const url = 'https://api.upbit.com/v1/ticker?markets=KRW-BTC'
+            const now = JSON.parse(localStorage.getItem('box')?? 0)
+            const data_box = [];
+            if(now){
+                now.forEach(v => {
+                    nowBit()
+                });
+            }
+            function nowBit(){
+                fetch(url)
+                .then((response)=>response.json())
+                .then(data=>{
+                data_box.push(data[0].trade_price)
+                div6.textContent = `현재${data[0].trade_price}`
+               })
+               localStorage.setItem('box',JSON.stringify(data_box))
+            }
+            button2.addEventListener('click',nowBit)
+               
+
+                 fetch(url)
+                .then((response)=>response.json())
+               .then(data=>{
+                div1.textContent = `날짜:${data[0].trade_date}`
+                div2.textContent = `시간:${data[0].trade_time}`
+                div3.textContent = `비트코인 현시세:${data[0].trade_price}`
+            })
+                button1.addEventListener('click',()=>{
+                fetch(url)
+                .then((response)=>response.json())
+                .then(data=>{
+                div4.textContent = `비트코인 최고가:${data[0].high_price}`
+                div5.textContent = `비트코인 최저가:${data[0].low_price}`
+                })
+                })
+
+            })
+     
+    </script>
+</head>
+<body>
+    <!-- html,fetch사용
+    0.기본정보 "trade_data":"20221227","trade_time":"002818
+    1.현재 비트코인 가격을 불러온다. ex)"trade_price" :21657000
+    2. localstorage 사용하여 F5또는 새로고침할때마다 이전의 가격과
+    비교하여 %정도 '상승/하강'하였는지 표시
+    3.옵션으로 버튼을 누르면 최고가와 최저가도 표시
+    "high_price":21745000,"low_price":21653000-->
+    
+</body>
+</html>

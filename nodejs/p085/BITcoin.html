@@ -25,7 +25,12 @@
             const data_box = [];
             if(now){
                 now.forEach(v => {
-                    nowBit()
+                    fetch(url)
+                    .then((response)=>response.json())
+                    .then(data=>{
+                    data_box.push(data[0].trade_price)
+                    div6.textContent = `현재${data[0].trade_price}`
+               })
                 });
             }
             function nowBit(){

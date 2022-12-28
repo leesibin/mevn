@@ -10,7 +10,7 @@
         <th>가격</th>
         <th>배송비</th>
       </tr>
-      <template v-for="item in dataARr" :key="item">
+      <template v-for="item in dataArr" :key="item">
         <tr v-if="item.price > inUser">
           <td>{{ item.category }}</td>
           <td>{{ item.product_name }}</td>
@@ -45,6 +45,7 @@ table {
   margin: auto;
   border-collapse: collapse;
 }
+
 th,
 td {
   border: 1px solid #000;

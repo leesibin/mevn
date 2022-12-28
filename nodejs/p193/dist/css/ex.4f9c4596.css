@@ -1,0 +1,1 @@
+ul{display:flex;margin:0}li{position:relative;margin:0 20px}li>text{margin-left:-3px}table{text-align:center;margin:auto;border-collapse:collapse}td,th{border:1px solid #000}button{scale:200%;background-color:#fff;border:1px solid #4f9188;margin:30px;cursor:pointer}button:hover{background:#2d92b1}button:active{color:#fff;background:#276faa}img{width:50%;height:50%}

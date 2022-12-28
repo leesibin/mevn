@@ -3,7 +3,8 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/ex_1">예제1</router-link>|
     <router-link to="/ex_2">예제2</router-link>|
-    <router-link to="/ex_3">예제3</router-link>
+    <router-link to="/ex_3">예제3</router-link>|
+    <router-link to="/ex_4">예제4</router-link>
   </nav>
   <router-view />
 </template>

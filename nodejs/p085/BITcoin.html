@@ -33,7 +33,7 @@
                })
                 });
             }
-            function nowBit(){
+            button2.addEventListener('click',()=>{
                 fetch(url)
                 .then((response)=>response.json())
                 .then(data=>{
@@ -41,8 +41,7 @@
                 div6.textContent = `현재${data[0].trade_price}`
                })
                localStorage.setItem('box',JSON.stringify(data_box))
-            }
-            button2.addEventListener('click',nowBit)
+            })
                
 
                  fetch(url)

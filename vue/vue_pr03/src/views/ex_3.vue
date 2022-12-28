@@ -13,6 +13,12 @@
     <input type="text" v-bind:value="inValue" v-on:input="UpValue">
     <button style="margin: 0 5px;" @click="setData">데이터 입력</button>
     <button @click="getData">데이터 출력</button>
+    <br />
+    <hr />
+    <button @click="img01">Page1</button>
+    <button>Page2</button>
+    <button>Page3</button>
+    <button>Page4</button>
   </div>
 </template>
 
@@ -21,11 +27,10 @@ export default {
   name: 'app',
   data() {
     return {
-      // outData: '꺼내온 값이에요.',
+      outData: '꺼내온 값이에요.',
       inData: '',
       inValue: '',
       temp: ''
-
     }
   },
   methods: {

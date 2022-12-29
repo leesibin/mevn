@@ -1,11 +1,12 @@
 <template>
   <div>
+    <H1>포켓몬 피규어 신상출시!</H1>
     <button @click="page = p" v-for="p in pages" :key="p" :class="{active: page == p}">
       {{ p }}</button>
     <div v-for="(g, i) in pages" :key="i">
       <div v-if="g == page"></div>
       {{ p }}
-      <img :src="'../../img' + (i + 1) + '.jpg'" alt="" srcset="">
+      <img v-if="g == page" :src="'../../img' + (i + 1) + '.jpg'" />
 
     </div>
   </div>

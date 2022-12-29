@@ -1,5 +1,5 @@
 <template>
-  <div class="ex_3">
+  <div>
     <h1>3.데이터 바인딩</h1>
     <h2>v-model을 사용하여 양방향을 구현</h2>
     <span>v-model:</span><input type="text" v-model="inData">

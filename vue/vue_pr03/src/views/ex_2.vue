@@ -1,5 +1,5 @@
 <template>
-  <div class="ex_2">
+  <div>
     <h1>2.데이터 가져오기</h1>
     <h4>가져온 데이터</h4>
     <p>{{ dataArr }}</p>

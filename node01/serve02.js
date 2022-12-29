@@ -18,6 +18,7 @@ app.get("/story", function (req, res) {
     "Avengers all Dead",
   ];
   const pick = `<h2>
+  
     <ul><li><a href="/story?id=0">Pretty</a></li>
     <li><a href="/story?id=1">Egg</a></li>
     <li><a href="/story?id=2">Tom</a></li>

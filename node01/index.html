@@ -4,16 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>정보창</title>
   </head>
   <body>
-    <h2>
-      <ul>
-        <li><a href="/story">Pretty</a></li>
-        <li><a href="/story">Egg</a></li>
-        <li><a href="/story">Tom</a></li>
-        <li><a href="/story">Cat & Dog</a></li>
-      </ul>
-    </h2>
+    <form action="/info" method="post">
+      <input type="text" id="id" name="iid" /><br />
+      <input type="password" id="name" name="ipw" /><br />
+      <textarea name="itext" id=""></textarea>
+      <input type="submit" value="확인" />
+    </form>
   </body>
 </html>

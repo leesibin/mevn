@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/fadd" method="post">
+      <input type="text" id="id" name="name" /><br />
+      <textarea name="age" id=""></textarea>
+      <input type="submit" value="파일생성" />
+    </form>
+    <form action="/padd" method="post">
+      <input type="submit" value="폴더생성" />
+    </form>
+
+    <!-- 과제 : 폴더가 없으면 생성하고 폴더가 있으면 해당폴더에 저장
+    단, 전송하는 파일의 확장자 명으로 구분하여 폴더생성(3자만)
+            한글파일.txt
+            aaaa.mp4
+            eee.xls 
+        mp4 끼리 담기
+    txt 끼리 담기
+   fs.exists('/etc/passwd',(exists)=>{
+    console.log(exists ? 'Found' : 'Not Found)
+   })
+        fs.mkdir(path,mode,callback)-->
+  </body>
+</html>

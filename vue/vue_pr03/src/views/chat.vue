@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <h1>채팅</h1>
+  </div>
 </template>
 
 <script>

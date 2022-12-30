@@ -39,17 +39,20 @@ app.post("/fadd", function (req, res) {
   });
 });
 app.post("/padd", (req, res) => {
+  let name = req.body.names;
   fs.stat(_path + name + ".txt", (err, stats) => {
     if (stats) {
-        res.send(
-          `<script>alert("${name}.txt 파일이 이미 존재합니다!${name}.txt 이름으로 저장합니다.");history go(-2)</script>`
-        );
-    fs.mkdir(path.join(__dirname, "mp7"), (err) => {
-      if (err) {
-        return console.error(err);
-      }
-      console.log("Directory created successfully!");
-    });
+      res.send(
+        `<script>alert("${name} 폴더이 이미 존재합니다!${name}.txt 이름으로 저장합니다.");history go(-2)</script>`
+      );
+    } else {
+      fs.mkdir(path.name (err) => {
+        if (err) {
+          return console.error(err);
+        }
+        console.log("Directory created successfully!");
+      });
+    }
   });
 });
 

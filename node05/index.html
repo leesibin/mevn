@@ -1,31 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>체티창</title>
+    <style>
+      body {
+        margin: 0;
+        padding-bottom: 3rem;
+      }
+      #form {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 4px;
+        position: fixed;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        display: flex;
+        height: 45px;
+        box-sizing: border-box;
+        backdrop-filter: blur(10px);
+      }
+      #input {
+        border: none;
+        padding: 0 16px;
+        flex-grow: 1;
+        border-radius: 32px;
+        margin: 4px;
+      }
+      #input:focus {
+        outline: none;
+      }
+      #form button {
+        background: #333;
+        border: none;
+        padding: 0.1em;
+        margin: 4px;
+        border-radius: 5px;
+        outline: none;
+        color: #fff;
+      }
+      #messages {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      #messages > li {
+        padding: 8px 16px;
+      }
+      #messages > li:nth-child(odd) {
+        background: #efefef;
+      }
+    </style>
   </head>
   <body>
-    <form action="/fadd" method="post">
-      <input type="text" id="id" name="name" /><br />
-      <textarea name="age" id=""></textarea>
-      <input type="submit" value="파일생성" />
-    </form>
-    <form action="/padd" method="post">
-      <input type="submit" value="폴더생성" />
-    </form>
+    <ul id="messages">
+      <form action="" id="form">
+        <input id="input" autocomplete="off" />
+        <button>전송</button>
+      </form>
+    </ul>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      let socket = io();
 
-    <!-- 과제 : 폴더가 없으면 생성하고 폴더가 있으면 해당폴더에 저장
-    단, 전송하는 파일의 확장자 명으로 구분하여 폴더생성(3자만)
-            한글파일.txt
-            aaaa.mp4
-            eee.xls 
-        mp4 끼리 담기
-    txt 끼리 담기
-   fs.exists('/etc/passwd',(exists)=>{
-    console.log(exists ? 'Found' : 'Not Found)
-   })
-        fs.mkdir(path,mode,callback)-->
+      let message = document.getElementById("messages");
+      let form = document.getElementById("form");
+      let input = document.getElementById("input");
+
+      /* 전송 */
+      form.addEventListener("submit", function (e) {
+        console.log("chat out");
+        e.preventDefault();
+        if (input.value) {
+          socket.emit("chat message", input.value);
+          input.value = "";
+        }
+      });
+
+      /* 수신 */
+      socket.on("chat message", function (msg) {
+        console.log("chat in");
+        let talk = document.createElement("li");
+        talk.textContent = msg; // 메세지를 li 에 표현
+        message.appendChild(talk); // 대화를 한줄식 추가
+        window.scrollTo(0, document.body.scrollHeight); // chat 가 길어졌을때
+      });
+    </script>
   </body>
 </html>

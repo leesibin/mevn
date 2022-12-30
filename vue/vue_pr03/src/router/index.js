@@ -8,6 +8,14 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/chat',
+    name: 'chat',
+    // route level code-splitting
+    // this generates a separate chunk (ex.about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "ex", */ '../views/chat.vue')
+  },
+  {
     path: '/Rhome',
     name: 'Rhome',
     // route level code-splitting
@@ -45,7 +53,10 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (ex.about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "ex", webpackPrefetch:true */ '../views/ex_4.vue')
+    component: () =>
+      import(
+        /* webpackChunkName: "ex", webpackPrefetch:true */ '../views/ex_4.vue'
+      )
   }
 ]
 

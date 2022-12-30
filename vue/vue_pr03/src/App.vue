@@ -1,7 +1,8 @@
 <template>
   <nav>
     <router-link to="/">노쇼</router-link> |
-    <router-link to="/Rhome">홈</router-link> |
+    <router-link to="/Rhome">로그인</router-link> |
+    <router-link to="/chat">채팅</router-link> |
     <router-link to="/ex_1">예제1</router-link>|
     <router-link to="/ex_2">예제2</router-link>|
     <router-link to="/ex_3">예제3</router-link>|

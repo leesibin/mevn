@@ -1,67 +1,37 @@
 <template>
-  <div class="page-container">
-    <md-app>
-      <md-app-toolbar class="md-primary">
-        <div class="md-toolbar-row">
-          <span class="md-title">My Chat App</span>
-        </div>
-      </md-app-toolbar>
-      <md-app-content>
-        <md-field>
-          <label>Message</label>
-          <md-textarea
-            v-model="textarea"
-            disabled
-            v-auto-scroll-bottom
-          ></md-textarea>
-        </md-field>
-        <md-field>
-          <label>Your Message</label>
-          <md-input v-model="message"></md-input>
-          <md-button class="md-primary md-raised" @click="sendMessage()"
-            >Submit</md-button
-          >
-        </md-field>
-      </md-app-content>
-    </md-app>
+  <div>
+    <h1>채팅방</h1>
+    <ul>
+      <li v-for="(msg, index) in messages" :key="index">{{ msg.messages }}</li>
+    </ul>
+    <div>
+      <input type="text" @keyup.enter="sendMessage()" v-model="messages" />
+    </div>
   </div>
 </template>
 
 <script>
+import io from 'socket.io-client'
+
 export default {
-  name: 'HelloWorld',
-  created() {
-    this.$socket.on('chat', (data) => {
-      this.textarea += '[' + data.socketId + ']' + data.message + '\n'
-    })
-  },
+  name: 'app',
   data() {
     return {
-      textarea: '',
-      message: '',
-      socketId: ''
+      messages: [],
+      socket: io('localhost:8080')
     }
   },
   methods: {
-    sendMessage() {
-      this.$socket.emit('chat', {
-        message: this.message,
-        socketId: this.$socket.id
-      })
-      this.textarea += '[' + this.$socket.id + ']' + this.message + '\n'
-      this.message = ''
-      this.socketId = this.$socket.id
+    sendMessage(message) {
+      // 2) 채팅메세지를 서버로 전송
+      this.socket.emit('SEND_MESSAGE', { message })
     }
+  },
+  mounted() {
+    // 3) 서버의 변경사항을 수신
+    this.socket.on('MESSAGE', (data) => {
+      this.messages = [...this.messages, data]
+    })
   }
 }
 </script>
-
-<style>
-.md-app {
-  height: 800px;
-  border: 1px solid;
-}
-.md-textarea {
-  height: 300px;
-}
-</style>

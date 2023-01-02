@@ -1,37 +1,49 @@
 <template>
   <div>
-    <h1>채팅방</h1>
-    <ul>
-      <li v-for="(msg, index) in messages" :key="index">{{ msg.messages }}</li>
-    </ul>
+    <h2>로그인</h2>
+
+    닉네임<input type="text" v-model="name" /><br />
+    메세지<input type="text" v-model="meg" v-on:keyup.enter="add" />
+    <button @click="add">전송</button>
+  </div>
+  <div id="container">
+    안녕하세요. 채팅창을 만들고 있는 중입니다...
     <div>
-      <input type="text" @keyup.enter="sendMessage()" v-model="messages" />
+      <ul>
+        <li v-for="data in arrmeg" :key="data">{{ data }}</li>
+      </ul>
     </div>
+    <div></div>
   </div>
 </template>
 
 <script>
-import io from 'socket.io-client'
-
 export default {
   name: 'app',
   data() {
     return {
-      messages: [],
-      socket: io('localhost:8080')
+      naem: '',
+      arrmeg: [],
+      meg: '',
+      megtext: ''
     }
   },
   methods: {
-    sendMessage(message) {
-      // 2) 채팅메세지를 서버로 전송
-      this.socket.emit('SEND_MESSAGE', { message })
+    add: function (message) {
+      this.arrmeg.push(this.name, this.meg)
+      this.megtext = this.arrmeg
+      this.meg = ''
+      this.socket.on('SEND_MESSAGE', { message })
     }
-  },
-  mounted() {
-    // 3) 서버의 변경사항을 수신
-    this.socket.on('MESSAGE', (data) => {
-      this.messages = [...this.messages, data]
-    })
+
+    // setData: function () {
+    //   if (this.inValue) {
+    //     // this.text_save.push(this.inValue)
+    //     this.temp = this.inValue
+    //   }
+    // }
   }
 }
 </script>
+
+<style></style>

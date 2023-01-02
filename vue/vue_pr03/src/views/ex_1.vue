@@ -28,7 +28,7 @@
   </div>
   <hr />
   <h3>v-for사용하기 /배열 : {{ arrData }}</h3>
-  <button v-on:click="add">추가하기</button>
+  <input v-on:click="add" />추가하기
   <button v-on:click="sub">삭제하기</button>
   <ul>
     <li v-for="data in arrData" :key="data">{{ data }}</li>

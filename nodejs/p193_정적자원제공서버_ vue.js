@@ -5,7 +5,7 @@ const path = require("path"); //경로를 활용할 수있는 유틸
 const logger = require("morgan");
 const app = express();
 const PORT = 3000;
-const _path = path.join(__dirname, "./p192"); //경로를 합쳐줌
+const _path = path.join(__dirname, "./vuegood"); //경로를 합쳐줌
 console.log(_path);
 
 app.use("/", express.static(_path)); //절대경로로 접근

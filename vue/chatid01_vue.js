@@ -19,13 +19,13 @@ let idInfo = {};
 io.on("connection", (socket) => {
   // console.log(socket.id);
   socket.on("chat", (msg) => {
-    // console.log(msg);
+    console.log(content);
     name = msg.id;
     toname = msg.toid;
     content = msg.message;
     idInfo[name] = socket.id;
     if (!toname) {
-      console.log(idInfo[toname]);
+      // console.log(idInfo[toname]);
       io.emit("chat", msg); //보낼 내용
     } else {
       io.to(idInfo[toname]).emit("chat", msg); // 특정상대에게 보냄

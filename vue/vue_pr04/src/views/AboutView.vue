@@ -1,7 +1,10 @@
 <template>
   <div>
-    <input type="text" v-model="Ename" v-on:keyup.enter="joinSubmit()" />
-    <button @click="joinSubmit()">참여</button>
+    <input
+      @input="Ename = $event.target.value"
+      v-on:keyup.enter="joinSubmit()"
+    />
+    <input type="button" value="확인" />
   </div>
 </template>
 
@@ -14,15 +17,12 @@ export default {
     };
   },
   created() {
-    this.$socket.on("Username", this.Ename);
+    this.$socket.on("newUser", this.Ename);
   },
   methods: {
     joinSubmit() {
       this.$router.push({ path: "home", query: { name: this.Ename } });
-      this.$socket.emit("Username", this.Ename);
-    },
-    mounted() {
-      this.Ename = this.$route.params.name;
+      this.$socket.emit("newUser", this.Ename);
     },
   },
 };

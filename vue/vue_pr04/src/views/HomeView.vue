@@ -16,6 +16,15 @@
         />
         <button @click="send()" id="send_button">전송</button>
         <button @click="del()">삭제</button>
+        <!-- <form action="/up" method="post" enctype="multipart/form-data">
+          <input
+            type="file"
+            name="ufile"
+            accept="image/jpeg, image/jpg, image/png, image/gif"
+            required
+          />
+          <input type="submit" value="이미지전송" @click="imges()" />
+        </form> -->
       </div>
     </div>
   </div>
@@ -37,16 +46,21 @@ export default {
   },
 
   created() {
-    this.$socket.on("chat message", (data) => {
+    this.$socket.on("chat", (data) => {
       window.scrollTo(0, document.body.scrollHeight);
-      this.Ameg.push(data);
+      const data0 = data.time + data.id + "님" + data.message;
+      this.Ameg.push(data0);
     });
   },
 
   methods: {
     send() {
       if (this.message) {
-        this.$socket.emit("chat message", this.message);
+        this.$socket.emit("chat", {
+          message: this.message,
+          id: this.name,
+          time: this.time,
+        });
         this.message = "";
       }
     },

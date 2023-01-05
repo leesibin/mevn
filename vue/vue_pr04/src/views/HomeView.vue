@@ -3,8 +3,6 @@
     <div id="screen">
       <div id="screen_detail">
         <div v-for="data in Ameg" :key="data" id="talk">
-          <div>{{ name }}</div>
-          <div id="time">{{ time }}</div>
           <div id="message">{{ data }}</div>
         </div>
       </div>
@@ -25,40 +23,39 @@
 
 <script>
 // import { getCurrentInstance, onMounted, reactive } from '@vue/runtime-core'
-import dayjs from 'dayjs'
+import dayjs from "dayjs";
 
 export default {
-  name: 'App',
+  name: "App",
   data() {
     return {
       name: this.$route.query.name,
       Ameg: [],
-      message: '',
-      time: dayjs().format('HH:mm')
-    }
+      message: "",
+      time: dayjs().format("HH:mm"),
+    };
   },
 
   created() {
-    this.$socket.on('chat message', (data) => {
-      window.scrollTo(0, document.body.scrollHeight)
-      this.Ameg.push(data)
-    })
+    this.$socket.on("chat message", (data) => {
+      window.scrollTo(0, document.body.scrollHeight);
+      this.Ameg.push(data);
+    });
   },
 
   methods: {
     send() {
       if (this.message) {
-        this.$socket.emit('chat message', this.message)
-        // this.Ameg.push(this.message) 백엔드 확인용
-        this.message = ''
+        this.$socket.emit("chat message", this.message);
+        this.message = "";
       }
     },
 
     del() {
-      this.Ameg = []
-    }
-  }
-}
+      this.Ameg = [];
+    },
+  },
+};
 </script>
 
 <style>

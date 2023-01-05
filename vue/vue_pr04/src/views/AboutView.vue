@@ -7,25 +7,25 @@
 
 <script>
 export default {
-  name: 'app',
+  name: "app",
   data() {
     return {
-      Ename: ''
-    }
+      Ename: "",
+    };
   },
   created() {
-    this.$socket.on('Username', this.Ename)
+    this.$socket.on("Username", this.Ename);
   },
   methods: {
     joinSubmit() {
-      this.$router.push({ path: 'home', query: { name: this.Ename } })
-      this.$socket.emit('Username', this.Ename)
+      this.$router.push({ path: "home", query: { name: this.Ename } });
+      this.$socket.emit("Username", this.Ename);
     },
     mounted() {
-      this.Ename = this.$route.params.name
-    }
-  }
-}
+      this.Ename = this.$route.params.name;
+    },
+  },
+};
 </script>
 
 <style></style>

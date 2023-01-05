@@ -2,8 +2,8 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>|
-    <router-link to="/idid">idid</router-link>
-    <router-link to="/check">About</router-link>|
+    <router-link to="/idid">idid</router-link>|
+    <router-link to="/check">check</router-link>|
   </nav>
   <router-view />
 </template>

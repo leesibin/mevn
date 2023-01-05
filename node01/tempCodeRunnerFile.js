@@ -1,0 +1,1 @@
+http://localhost:3000/test?id=0707&name=홍길동

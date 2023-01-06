@@ -1,5 +1,22 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="con">
+    <img class="imgsize" src="../assets/lifecycle.16e4c08e.png" alt="" />
   </div>
 </template>
+
+<script>
+export default {
+  name: "app",
+  data() {
+    return {};
+  },
+  methods: {},
+};
+</script>
+
+<style>
+.imgsize {
+  width: 50%;
+  height: 50%;
+}
+</style>

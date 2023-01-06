@@ -1,9 +1,14 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link>|
+    <router-link to="/bindstring">string</router-link>|
+    <router-link to="/bindhtml">bindhtml</router-link>|
+    <router-link to="/bindinput">bindinput</router-link>|
+    <router-link to="/bindselect">bindselect</router-link>|
+    <router-link to="/bindcheckbox">bindcheckbox</router-link>|
   </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>

@@ -4,7 +4,7 @@
       @input="Ename = $event.target.value"
       v-on:keyup.enter="joinSubmit()"
     />
-    <input type="button" value="확인" />
+    <input type="button" value="확인" @click="joinSubmit()" />
   </div>
 </template>
 

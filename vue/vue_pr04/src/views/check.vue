@@ -1,10 +1,14 @@
 <template>
-  <div></div>
+  <h1>component 예제</h1>
+  <div>{{ sbData1 }}</div>
+  <div>{{ sbData2 }}</div>
 </template>
 
 <script>
 export default {
+  props: ["sbData1", "sbData2"],
   name: "app",
+
   data() {
     return {};
   },

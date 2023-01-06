@@ -1,9 +1,12 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>|
-    <router-link to="/idid">idid</router-link>|
-    <router-link to="/check">check</router-link>|
+    <router-link to="/">채팅창</router-link> |
+    <router-link to="/about">로그인창</router-link>|
+    <router-link to="/idid">Ex)채팅창</router-link>|
+    <router-link to="/check">Ex)값전달1</router-link>|
+    <router-link to="/check2">Ex)값전달2</router-link>|
+    <router-link to="/check3">Ex)값전달3</router-link>|
+    <router-link to="/check4">Ex)값전달4</router-link>|
   </nav>
   <router-view />
 </template>

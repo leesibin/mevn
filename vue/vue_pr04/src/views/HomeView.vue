@@ -48,7 +48,7 @@ export default {
   created() {
     this.$socket.on("chat", (data) => {
       window.scrollTo(0, document.body.scrollHeight);
-      const data0 = data.time + data.id + "님" + data.message;
+      const data0 = data.time + data.id + "님 - " + data.message;
       this.Ameg.push(data0);
     });
   },

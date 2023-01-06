@@ -1,7 +1,7 @@
 <template>
-  <div class="modal">
+  <div class="modal" v-if="modalon" @click="modalon = false">
     <div class="modal-body">
-      <div>👏🏻변경되었습니다.😁</div>
+      <div>🔊환영합니다.🎈</div>
     </div>
   </div>
 
@@ -14,7 +14,11 @@
           @input="myname = $event.target.value"
           placeholder="대화명을 입력하세요."
         />
-        <input type="button" value="확인" @click="makeName()" />
+        <input
+          type="button"
+          value="확인"
+          @click="[makeName(), (modalon = true)]"
+        />
       </span>
       <span v-if="myname !== '익명'">대화명:{{ myname }}</span>
     </div>
@@ -65,7 +69,11 @@ export default {
   },
   methods: {
     makeName() {
-      console.log("나중에 씀");
+      this.$socket.emit("chat", {
+        id: this.myname,
+        message: `${this.myname}을 이름으로 바꾸셨습니다.`,
+      });
+      this.message = "";
     },
     sendMessage() {
       this.$socket.emit("chat", {
@@ -140,5 +148,24 @@ button {
   border-radius: 5px;
   outline: none;
   color: #fff;
+}
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+.modal-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.5);
 }
 </style>

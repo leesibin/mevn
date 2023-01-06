@@ -38,18 +38,17 @@ app.use(
 //     res.send(`<script>alert("파일 업로드 완료!");history.go(-1);</script>`)
 //   );
 // });
-let name, toname, content;
+
 io.on("connection", (socket) => {
   socket.on("newUser", (name) => {
-    socket.name = name;
     console.log(name);
     io.emit("chat", {
       message: name + "님이 접속하였습니다.",
     });
     socket.on("disconnect", () => {
-      console.log(socket.name);
+      console.log(name);
       io.emit("chat", {
-        message: socket.name + "님이 퇴장하셨습니다.",
+        message: name + "님이 퇴장하셨습니다.",
       });
     });
   });

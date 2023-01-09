@@ -22,23 +22,6 @@ app.use(
   })
 );
 
-// const storage = multer.diskStorage({
-//   destination: (req, res, cb) => {
-//     cb(null, _path); //경로를 같은 폴더에 설정
-//   },
-//   filename: (req, res, cb) => {
-//     cb(null, res.originalname); //오리지날네임 설정
-//   },
-// });
-// let upload = multer({ storage: storage }); //멀터 옵션을 오브젝트로 설정
-
-// app.post("/up", upload.single("ufile"), (req, res, next) => {
-//   //파일 단독으로 전승옵션
-//   console.log(
-//     res.send(`<script>alert("파일 업로드 완료!");history.go(-1);</script>`)
-//   );
-// });
-
 io.on("connection", (socket) => {
   socket.on("newUser", (name) => {
     console.log(name);

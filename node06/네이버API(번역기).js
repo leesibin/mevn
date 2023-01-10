@@ -1,4 +1,5 @@
 require("dotenv").config();
+const dotenv = require("dotenv");
 var express = require("express");
 const path = require("path");
 const logger = require("morgan");
@@ -19,7 +20,9 @@ var client_id = process.env.id; //네이버 내애플리케이션 아이디,시�
 var client_secret = process.env.secret;
 
 app.get("/ott", function (req, res) {
+  console.log(ktext);
   var ktext = req.body.ktext;
+  var pp = req.body.pp;
   var api_url = "https://openapi.naver.com/v1/papago/n2mt";
   var request = require("request");
   var options = {
@@ -33,10 +36,10 @@ app.get("/ott", function (req, res) {
 
   request.post(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      let no = JSON.parse(body);
       res.writeHead(200, { "Content-Type": "text/json;charset=utf-8" });
+      let no = JSON.parse(body);
       console.log(no);
-      res.send(`<script>alret("${body}")</script>`);
+      res.send(no.message.result.translatedText);
     } else {
       res.status(response.statusCode).end();
       console.log("error = " + response.statusCode);

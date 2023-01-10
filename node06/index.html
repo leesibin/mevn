@@ -5,10 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script>
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   const input = document.getElementById("input");
+      //   const btn = document.getElementById("btn");
+      //   const pp = document.getElementById("pp");
+      //   btn.addEventListener("click", () => {
+      //     pp.innerHTML = input.value;
+      //   });
+      // });
+    </script>
   </head>
   <body>
     <form action="/ott" method="get">
-      <input type="text" name="ktext" />
+      <input id="input" type="text" name="ktext" />
+      <button id="btn">확인</button>
+      <p id="pp" name="pp">내용 :</p>
     </form>
   </body>
 </html>

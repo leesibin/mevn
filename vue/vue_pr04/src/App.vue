@@ -6,7 +6,8 @@
     <router-link to="/check">Ex)값전달1</router-link>|
     <router-link to="/check2">Ex)값전달2</router-link>|
     <router-link to="/check3">Ex)값전달3</router-link>|
-    <router-link to="/check4">Ex)값전달4</router-link>|
+    <router-link to="/check4">Ex)값전달</router-link>|
+    <router-link to="/sock">socket예제</router-link>|
   </nav>
   <router-view />
 </template>

@@ -13,13 +13,14 @@
 
         document.body.appendChild(p);
         button.addEventListener("click", (e) => {
+          e.preventDefault();
           p.innerHTML = "내용:" + input.value;
         });
       });
     </script>
   </head>
   <body>
-    <form action="/ott" method="post">
+    <form action="/ott">
       <input id="ip" type="text" name="ktext" style="ime-mode: disabled" />
       <button id="btn">번역</button>
     </form>

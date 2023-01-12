@@ -1,13 +1,18 @@
-const job1 = ()=>{
-    return new Promise((resolve,reject)=>{  //new Promise(매개변수) = new Promise()
-        setTimeout(()=>{
-            console.log(`물을 끓이고(기다림 ${Math.random()*1000}초)`)
-            resolve('job1')
-        },Math.random()*1000)
-    })
-}
-const main = async()=>{
-    await job1()
+const TelegramBot = require("node-telegram-bot-api");
 
-}
-main()
+const token = process.env.botid;
+
+const bot = new TelegramBot(token, { polling: true });
+bot.on("polling_error", (msg) => console.log(msg));
+bot.onText(/\/echo (.+)/, (msg, match) => {
+  const chatId = msg.chat.id;
+  const resp = match[1];
+
+  bot.sendMessage(chatId, resp);
+});
+
+bot.on("message", (msg) => {
+  const chatId = msg.chat.id;
+
+  bot.sendMessage(chatId, "Received your message");
+});

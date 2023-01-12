@@ -1,19 +1,10 @@
 require("dotenv").config();
+const axios = require("axios"); //requset 보다 좀더 편리하고 기능이추가 사이트 끌어오기 용하다
+const cheerio = require("cheerio"); //제이쿼리 문법을 살짝 묻힘 선택자용도
 const TelegramBot = require("node-telegram-bot-api");
-const lostark = "https://lostark.game.onstove.com/Main";
-const hip =
-  "https://onairing.com/files/attach/images/147/862/046/001/fa930e8877715d94d43fa581c410d391.jpg";
-// replace the value below with the Telegram token you receive from @BotFather
 const token = process.env.botid;
-
-const time = new Date();
-
-const k_time = time.toLocaleString();
-const hour = time.getHours();
-const minute = time.getMinutes();
-const timestamp = hour + ":" + minute;
-// Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, { polling: true });
+const url = "https://finance.naver.com/item/main.nhn?code=005930";
 
 // Matches "/echo [whatever]"
 bot.onText(/^저장해/, (msg, match) => {
@@ -22,82 +13,34 @@ bot.onText(/^저장해/, (msg, match) => {
   // of the message
 
   const chatId = msg.chat.id;
-  const resp = match[1]; // the captured "whatever"
+  const opop = match[1].replace(msg.text, msg.text);
 
-  // send back the matched "whatever" to the chat
-  bot.sendMessage(chatId, resp);
+  const resp = "기억합니다";
+  bot.sendMessage(chatId, resp + opop);
 });
 
 // Listen for any kind of message. There are different kinds of
 // messages.
-
-bot.on("message", (msg) => {
-  if (msg.text === "반갑습니다") {
-    const chatId = msg.chat.id;
-    bot.sendMessage(chatId, "응안반가워");
-  }
-});
-bot.on("message", (msg) => {
-  if (msg.text === "김수환") {
-    const chatId = msg.chat.id;
-    bot.sendMessage(chatId, "멍청이입니다.");
-  }
-});
-bot.on("message", (msg) => {
-  if (msg.text === "피곤해요") {
-    const chatId = msg.chat.id;
-    bot.sendMessage(chatId, "자던지");
-  }
-});
-bot.on("message", (msg) => {
-  if (msg.text === "그치") {
-    const chatId = msg.chat.id;
-    const fileId =
-      "AgACAgUAAxkBAAIBcWO-EDPLyuiuA8I1o1D-Rab6uVKLAALztjEbAg3wVX0U0j5-Qq4AAQEAAwIAA20AAy0E";
-    bot.sendMessage(chatId, fileId);
-  }
+let menu = [];
+axios.get(url).then((res) => {
+  let $ = cheerio.load(res.data);
+  $("#chart_area").each(function () {
+    menu.push($(this).text());
+  });
 });
 
 bot.on("message", (msg) => {
-  if (msg.text === "최고의 게임?") {
+  if (msg.text === "안녕") {
     const chatId = msg.chat.id;
-    bot.sendMessage(chatId, "포모스선정2023년최고의게임입니다.\n" + lostark);
-  }
-});
-bot.on("message", (msg) => {
-  setInterval(() => {
-    if (msg.text === "이시빈인성") {
-      const chatId = msg.chat.id;
-      bot.sendMessage(chatId, "김수환 이놈!");
-    }
-  }, 3000);
-});
-bot.on("message", (msg) => {
-  if (msg.text === "시간") {
-    const chatId = msg.chat.id;
-    bot.sendMessage(chatId, k_time);
-  }
-});
-
-bot.on("message", (msg) => {
-  const chatId = msg.chat.id;
-  // bot.sendMessage(chatId, "뿌요?");
-  console.log(msg);
-});
-
-bot.on("message", (msg) => {
-  if (msg.text === "사진") {
-    const chatId = msg.chat.id;
-    const fileId =
-      "AgACAgUAAx0CZIK4dgACAlBjvggc-N1pXJxzE6WJI4OHSO09SgACLrIxG0Sh8FWSvgmS3-ceewEAAwIAA3gAAy0E";
-    bot.sendPhoto(chatId, fileId);
     console.log(msg);
+    bot.sendMessage(chatId, "안녕하세요");
+    console.log("chatId");
   }
 });
-const id = -679408568;
 bot.on("message", (msg) => {
-  if (msg.text === id) {
+  if (msg.text === "삼성주식") {
     const chatId = msg.chat.id;
-    bot.sendMessage(chatId, "아니");
+
+    bot.sendMessage(chatId, menu[0]);
   }
 });

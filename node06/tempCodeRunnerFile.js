@@ -1,1 +1,2 @@
-var query = "감사합니다";
+
+      res.status(response.statusCode).end();

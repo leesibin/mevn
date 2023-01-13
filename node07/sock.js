@@ -16,7 +16,7 @@ app.use(
   })
 );
 
-var client_id = process.env.id; //네이버 내애플리케이션 아이디,시크릿 작성하기(env)
+var client_id = process.env.id;
 var client_secret = process.env.secret;
 
 app.post("/ott", function (req, res) {

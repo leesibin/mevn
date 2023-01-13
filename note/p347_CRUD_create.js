@@ -3,7 +3,7 @@ const main = async () => {
   const _data = {
     albumId: 12010,
     id: 12010,
-    title: "이시빈",
+    title: "나비",
     url: "google.com",
     thumbnailUrl: "https://naver.com",
   };

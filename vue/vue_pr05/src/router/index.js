@@ -61,6 +61,33 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/bindcheckbox.vue"),
   },
+  {
+    path: "/API1",
+    name: "API1",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/API1.vue"),
+  },
+  {
+    path: "/API2",
+    name: "API2",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/API2.vue"),
+  },
+  {
+    path: "/API3",
+    name: "API3",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/API3.vue"),
+  },
 ];
 
 const router = createRouter({

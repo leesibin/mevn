@@ -7,7 +7,7 @@ const main = async () => {
       },
     },
     {
-      $set: { url: "https://www.daum.net" },
+      $set: { url: "https://www.naver.com" },
     },
     {
       upsert: true,

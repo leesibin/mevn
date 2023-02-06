@@ -1,10 +1,10 @@
 <template>
   <div>vue로작성하기</div>
-  <v-form ref="form" @submit.prevent="send">
+  <form action="">
     <video id="video0"></video>
     <button @click="main()">tensor추출</button>
     <div>{{ resultgood }}</div>
-  </v-form>
+  </form>
 </template>
 
 <script>

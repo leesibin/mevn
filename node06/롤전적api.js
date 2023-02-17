@@ -16,13 +16,13 @@ axios.get(url).then((res) => {
         return b - a;
       });
     });
-    $(".listTable>table>tbody>tr>td:nth-child(2)").each(function () {
+    $(".listTable>table>tbody>tr>td:nth-child(4)").each(function () {
       left.push($(this).text());
     });
     // $(".listTable>table>tbody>tr>td:nth-child(3)").each(function () {
     //   benlist.push($(this).text());
     // });
-    console.log(typeof rank[i]);
-    console.log(`${rank[i]}${left[i]}`);
+    // console.log(typeof rank[i]);
+    console.log(`${rank[i]} : ${left[i]}`);
   }
 });

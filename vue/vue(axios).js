@@ -13,14 +13,15 @@ app.use(logger("tiny"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.post("/about", function (req, res) {
+app.post("/about2", function (req, res) {
   // front 서버에서 post 방식으로 전송받음
   // console.log(req.body.resultgood);
-  const A = req.body.resultgood;
-  const B = req.body.resultgood;
+  const A = req.body.idruselt;
+  const B = req.body.pwruselt;
   const main = async () => {
     const _data = {
       명령어: A,
+      발동:B
     };
     console.log(_data.A, _data.B);
     const new_photo = new Photo(_data);

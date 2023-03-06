@@ -1,9 +1,9 @@
 # mevn
 
-#MongoDB
+● MongoDB
 
-#Express
+● Express
 
-#Vue.js 3.0
+● Vue.js 3.0
 
-#Node.js
+● Node.js

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv=-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>danfo06</title>
+ <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.js"></script>
+</head>
+<body>
+<script>
+ const arr_data = [['val1', 10, 1.2, 'test'],['val2', 20, 4.2, 'train'],['val3', 30, 3.2, 'test'],['val4', 40, 2.2, 'train']]
+df = new dfd.DataFrame(arr_data, {colrumns:['A1','A2','A3','A4'],index:['A1','A2','A3','A4']})
+df.print()
+df.head(2).print()
+df.tail(2).print()
+ </script>
+</body>
+</html>

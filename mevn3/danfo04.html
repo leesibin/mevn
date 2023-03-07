@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv=-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>danfo04</title>
+ <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.js"></script>
+</head>
+<body>
+<script>
+  let json_data=[
+    {A:0.444, B:4.222, C:-1.555, D:-1.111},
+    {A:0.544, B:3.222, C:-3.555, D:-6.111},
+    {A:1.444, B:4.242, C:-2.555, D:-1.111},
+    {A:2.444, B:7.222, C:-1.555, D:-7.111}
+  ]
+ let df = new dfd.DataFrame(json_data)
+ df.print()
+ </script>
+</body>
+</html>

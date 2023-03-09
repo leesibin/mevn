@@ -25,16 +25,8 @@
   </div>
   <div id="plot1"></div>
 </template>
-<!-- <script setup>
-  // import { defineProps } from 'vue' //  vue3부터 안해도 됨
-  // const pr = defineProps({ // 테스트 해봄
-  //   name: String,
-  //   age: Number
-  // })
-  
-  </script> -->
-
 <script>
+/* eslint-disable */
 import * as XLSX from "xlsx/xlsx.mjs";
 
 export default {
@@ -136,7 +128,7 @@ export default {
         model.add(tf.layers.dense({ units: 12, inputShape: 1 }));
 
         model.add(tf.layers.dense({ units: 12, activation: "relu" })); // activation: 'relu'
-        model.add(tf.layers.dense({ units: 1 }));
+        model.add(tf.layers.dense({ units: 1, activation: "relu" }));
         model.compile({
           loss: "meanSquaredError", // 'binaryCrossentropy',
           optimizer: "adam",

@@ -12,7 +12,7 @@
 
 <script>
 /* eslint-disable */
-import tf1 from "@/components/tf0.vue";
+import tf1 from "@/components/tf1.vue";
 import tf2 from "@/components/tf2.vue";
 import tf3 from "@/components/tf3.vue";
 export default {

@@ -1,13 +1,49 @@
 # MEVN
 
-● MongoDB
+1.DataBase(MongoDB)
+ 
+ 
+ 
+ MongoDB(compass,d)설치
+ 
+ https://www.mongodb.com/try/download/community
+ 
+ 항목 : Mongodb community Server
+ 
+ 메뉴
 
-MongoDB는 무엇입니까?
+ ● Version : 6.0.3(current)
+ 
+ ● Platform : windows
+ 
+ ● Package : msi
+ 
+ Mongsh 설치
+ 
+ 메뉴
+ 
+ https://www.mongodb.com/try/download/compass
 
-MongoDB는 필요한 쿼리 제공 및 인덱싱을 활용해 원하는 수준의 확장성과 유연성을 제공하는 문서 데이터베이스입니다
+ 
+ ● Version : 1.6.2
+ 
+ ● Platform : windows 64-bi(8.1+)
+ 
+ ● Package : zip
+ 
+ 
+ 
 
-● Express
+2.Backend(Express.js)
 
-● Vue.js 3.0
 
-● Node.js
+
+3.Frontend(Vue.js 3.0)
+
+
+
+4. Backend(Node.js)
+
+
+
+ 

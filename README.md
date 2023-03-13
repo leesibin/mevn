@@ -1,9 +1,49 @@
 # MEVN
 
-● MongoDB
+1.DataBase(MongoDB)
+ 
+ 
+ 
+ MongoDB(compass,d)설치
+ 
+ https://www.mongodb.com/try/download/community
+ 
+ 항목 : Mongodb community Server
+ 
+ 메뉴
 
-● Express
+ ● Version : 6.0.3(current)
+ 
+ ● Platform : windows
+ 
+ ● Package : msi
+ 
+ Mongsh 설치
+ 
+ 메뉴
+ 
+ https://www.mongodb.com/try/download/compass
 
-● Vue.js 3.0
+ 
+ ● Version : 1.6.2
+ 
+ ● Platform : windows 64-bi(8.1+)
+ 
+ ● Package : zip
+ 
+ 
+ 
 
-● Node.js
+2.Backend(Express.js)
+
+
+
+3.Frontend(Vue.js 3.0)
+
+
+
+4. Backend(Node.js)
+
+
+
+ 
